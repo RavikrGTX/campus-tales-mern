@@ -18,6 +18,7 @@ app.use(express.json());
 app.listen(3000,()=>{
     console.log("server is running on 3000");
 });
+//test api
 
 app.use('/api/user',userRoutes);
 app.use('/api/auth',authRoutes);
