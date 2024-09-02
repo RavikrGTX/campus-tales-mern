@@ -15,7 +15,7 @@ export default function SignIn() {
  const handleChange= (e)=>{
   setFormData({ ...formData,[e.target.id]: e.target.value.trim()});
  };
- const handleSubmit= async (e)=>{
+ const handleSubmit= async(e)=>{
    e.preventDefault();
    if(!formData.email||!formData.password){
     return dispatch(signInFailure('please fill all the fields'));
@@ -69,7 +69,7 @@ export default function SignIn() {
               <Label>password</Label>
               <TextInput 
               type='password'
-              placeholder='password'
+              placeholder='********'
               id='password' onChange={handleChange}/>
               </div>
               <Button gradientDuoTone='greenToBlue' type='submit' onClick={handleSubmit} disabled={loading}>{
@@ -79,7 +79,7 @@ export default function SignIn() {
                   <span className='pl-3'>Loading</span>
                   </>
                 ):'Sign In'
-              }
+                }
               </Button>
               </form>
                <div className='flex gap-3 text-sm mt-4'>
