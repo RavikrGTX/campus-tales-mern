@@ -1,14 +1,15 @@
 import { Alert, Button, Label, TextInput } from 'flowbite-react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Spinner } from 'flowbite-react';
 import { Link ,useNavigate } from 'react-router-dom';
 import { useDispatch ,useSelector} from 'react-redux';
 import { signInStart,signInSuccess,signInFailure, } from '../redux/user/userSlice';
+import OAuth from '../components/OAuth';
 
 
 export default function SignIn() {
  const [formData, setFormData] = useState({});
- const {loading,error:errorMessage}=useSelector((state)=>state.user);
+ const {loading, error:errorMessage}=useSelector((state)=>state.user);
 
  const dispatch=useDispatch();
  const navigate=useNavigate();
@@ -22,7 +23,7 @@ export default function SignIn() {
    }
    try{
     dispatch(signInStart());
-    const res = await fetch('api/auth/signin',{
+    const res = await fetch('/api/auth/signin',{
       method:'POST',
       headers: {'Content-Type':'application/json'},
       body:JSON.stringify(formData),
@@ -56,31 +57,26 @@ export default function SignIn() {
         {/* right */}
 
         <div className='flex-1'>
-          <form className='flex flex-col gap-4'>
+          <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
          
             <div>
-              <Label>email</Label>
+              <Label value='Your email'/>
               <TextInput 
               type='email'
               placeholder='Email'
               id='email'onChange={handleChange}/>
               </div>
             <div>
-              <Label>password</Label>
+              <Label value='Your password'/>
               <TextInput 
               type='password'
               placeholder='********'
               id='password' onChange={handleChange}/>
               </div>
-              <Button gradientDuoTone='greenToBlue' type='submit' onClick={handleSubmit} disabled={loading}>{
-                loading?(
-                  <>
-                  <Spinner size='sm'/>
-                  <span className='pl-3'>Loading</span>
-                  </>
-                ):'Sign In'
-                }
+              <Button gradientDuoTone='greenToBlue' type='submit' onSubmit={handleSubmit}> 
+              Sign In
               </Button>
+              <OAuth/>
               </form>
                <div className='flex gap-3 text-sm mt-4'>
               <span>Don't Have an account?</span>
