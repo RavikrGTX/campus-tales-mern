@@ -10,6 +10,7 @@ import Header from './components/Header'
 import Hero from './components/Hero/Hero'
 import Blog from './pages/Blog'
 import FooterCom from './components/FooterCom'
+import PrivateRoute from './components/PrivateRoute'
 
 // import FooterCom from './components/FooterCom'
 
@@ -25,7 +26,10 @@ export default function App() {
     <Route path="/blog" element={<Blog/>}/> 
     <Route path="/sign-in" element={<SignIn/>}/>
     <Route path="/sign-up" element={<SignUp/>}/>
+    <Route element={<PrivateRoute/>}>
+    
     <Route path="/dashboard" element={<Dashboard/>}/>
+    </Route>
     <Route path="/contact" element={<Contact/>}/>
   </Routes>
    <FooterCom/>
