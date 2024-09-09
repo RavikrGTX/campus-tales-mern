@@ -3,12 +3,17 @@ import {useSelector} from 'react-redux';
 import { useState } from "react";
 import { Modal, Table, Button } from 'flowbite-react';
 import { Link } from "react-router-dom"
+import { HiOutlineExclamationCircle } from 'react-icons/hi';
+// import { set } from 'mongoose';
 
 export default function DashPosts() {
   const {currentUser}=useSelector((state)=>state.user);
   const [userPosts, setUserPosts] = useState([]);
   const [showMore, setShowMore] = useState(true);
-  console.log(userPosts);
+  const [showModal, setShowModal] = useState(false);
+  const [postIdToDelete,setPostIdToDelete]=useState('');
+
+  
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -46,6 +51,27 @@ export default function DashPosts() {
     }
   };
 
+  const handleDeletePost = async () => {
+    setShowModal(false);
+    try {
+      const res = await fetch(
+        `/api/post/deletepost/${postIdToDelete}/${currentUser._id}`,
+        {
+          method: 'DELETE',
+        }
+      );
+      const data = await res.json();
+      if (!res.ok) {
+        console.log(data.message);
+      } else {
+        setUserPosts((prev) =>
+          prev.filter((post) => post._id !== postIdToDelete)
+        );
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   return (
     <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
       {currentUser.isAdmin && userPosts.length > 0 ? (
@@ -88,7 +114,7 @@ export default function DashPosts() {
                   <Table.Cell>
                     <span
                       onClick={() => {
-                        // setShowModal(true);
+                        setShowModal(true);
                         setPostIdToDelete(post._id);
                       }}
                       className='font-medium text-red-500 hover:underline cursor-pointer'
@@ -120,7 +146,7 @@ export default function DashPosts() {
       ) : (
         <p>You have no posts yet!</p>
       )}
-      {/* <Modal
+      <Modal
         show={showModal}
         onClose={() => setShowModal(false)}
         popup
@@ -143,7 +169,7 @@ export default function DashPosts() {
             </div>
           </div>
         </Modal.Body>
-      </Modal> */}
+      </Modal>
     </div>
   );
 }
