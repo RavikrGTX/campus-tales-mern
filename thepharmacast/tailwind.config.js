@@ -24,6 +24,6 @@ module.exports = {
   ],
   plugins: [
     // ...
-    flowbite.plugin(),
+    flowbite.plugin(),require('tailwind-scrollbar')
   ],
 };
