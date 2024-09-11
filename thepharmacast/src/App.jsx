@@ -3,7 +3,7 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import SignUp from './pages/SignUp'
 import Dashboard from './pages/Dashboard'
 import Contact from './pages/Contact'
-import Home from './pages/Home'
+// import Home from './pages/Home'
 import About from './pages/About'
 import SignIn from './pages/SignIn'
 import Header from './components/Header'
@@ -16,6 +16,7 @@ import CreatePost from './pages/CreatePost'
 import UpdatePost from './pages/UpdatePosts'
 import PostPage from './pages/PostPage'
 import ScrollToTop from './components/ScrollToTop'
+import Search from './pages/Search'
 
 // import FooterCom from './components/FooterCom'
 
@@ -32,6 +33,7 @@ export default function App() {
     <Route path="/blog" element={<Blog/>}/> 
     <Route path="/sign-in" element={<SignIn/>}/>
     <Route path="/sign-up" element={<SignUp/>}/>
+    <Route path="/search" element={<Search/>}/>
     <Route element={<PrivateRoute/>}>
     
     <Route path="/dashboard" element={<Dashboard/>}/>
