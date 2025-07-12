@@ -19,7 +19,7 @@ This transition reflects my journey as a developer — from client work to build
 - 🧑‍💻 *Single Author Mode* — full control over content
 - 📰 *Public Blog Feed*
 - 📱 *Responsive UI* — Mobile to Desktop
-- 🌈 *Clean & Minimal Design*
+-  *Clean & Minimal Design*
 
 ---
 
@@ -33,15 +33,16 @@ This transition reflects my journey as a developer — from client work to build
 
 ## 🌐 Live Demo
 
-🔗 [Live Site](https://your-deployment-link.com)  
+🔗 [Live Site] 
 🧠 Note: All content is written and managed by me personally.
 
 ---
 
 ## 📸 Screenshots
 
-Add 2–3 screenshots or a short GIF showing your homepage, login screen, and blog editor.
+
 
 ---
 
 ## 📁 Project Structure
+
