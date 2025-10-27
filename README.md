@@ -31,18 +31,4 @@ This transition reflects my journey as a developer — from client work to build
 
 ---
 
-## 🌐 Live Demo
-
-🔗 [Live Site] 
-🧠 Note: All content is written and managed by me personally.
-
----
-
-## 📸 Screenshots
-
-
-
----
-
-## 📁 Project Structure
 
