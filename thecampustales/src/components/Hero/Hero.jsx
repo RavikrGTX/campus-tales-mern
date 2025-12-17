@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import PostCard from "../PostCard";
 
 import "./Hero.css";
+import { Button } from "flowbite-react";
 
 const Hero = () => {
   const [posts, setPosts] = useState([]);
@@ -20,17 +21,17 @@ const Hero = () => {
     <div className="hero">
       <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto ">
         <h1 className="text-3xl font-bold lg:text-6xl">
-          Welcome to ThePharmacast
+          Welcome to Campus Tales
         </h1>
-        <p className="text-white-500 text-xs sm:text-sm">
-          Here you'll find a variety of articles and tutorials on topics such as
-          pharmacology, pharma and phd.
+        <p className="text-white-500 text-md ">
+          Stories from campus.
+Clarity for life.
         </p>
         <Link
           to="/search"
-          className="text-xs sm:text-sm text-teal-500 font-bold hover:underline"
+          className="text-xs sm:text-sm  font-bold hover:underline"
         >
-          View all posts
+           <span className="px-2 py-1 bg-black  rounded-lg text-white">All Posts</span> 
         </Link>
 
         {/* <div className='p-3 bg-amber-100 dark:bg-slate-700'>

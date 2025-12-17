@@ -49,13 +49,13 @@ export default function Header() {
   };
 
   return (
-    <Navbar className='border-b-2'>
+    <Navbar className='border-b-2 border-black' >
       <Link
         to='/'
         className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'
       >
-        <span className='px-2 py-1 bg-gradient-to-r from-green-500 via-green-600 to-green-900 rounded-lg text-white' >
-          ThePharmacast
+        <span className='px-2 py-1 bg-black  rounded-lg text-white' >
+          Campus Tales
         </span>
         
       </Link>
@@ -64,7 +64,7 @@ export default function Header() {
           type='text'
           placeholder='Search...'
           rightIcon={AiOutlineSearch}
-          className='hidden lg:inline'
+          className='hidden lg:inline '
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -103,7 +103,7 @@ export default function Header() {
           </Dropdown>
         ) : (
           <Link to='/sign-in'>
-            <Button gradientDuoTone='greenToBlue' outline>
+            <Button gradientDuoTone='grayToOrange' outline>
               Sign In
             </Button>
           </Link>
@@ -118,7 +118,7 @@ export default function Header() {
           <Link to='/about'>About</Link>
         </Navbar.Link>
         <Navbar.Link active={path === '/projects'} as={'div'}>
-          <Link to='/projects'>Projects</Link>
+          {/* <Link to='/projects'>Projects</Link> */}
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>

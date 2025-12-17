@@ -118,7 +118,7 @@ const handleSubmit = async (e) => {
           </Select>
         </div>
         
-        <div className='flex gap-4 items-center justify-between border-4 border-green-500 border-dotted p-3'>
+        <div className='flex gap-4 items-center justify-between border-4 border-black border-dotted p-3'>
             <FileInput type='file' accept='image/*' onChange={(e)=>setFile(e.target.files[0])}/>
             <Button type='button' gradientDuoTone='greenToBlue' size='sm'
             outline

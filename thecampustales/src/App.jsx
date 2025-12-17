@@ -17,7 +17,7 @@ import UpdatePost from './pages/UpdatePosts'
 import PostPage from './pages/PostPage'
 import ScrollToTop from './components/ScrollToTop'
 import Search from './pages/Search'
-import Projects from './pages/Projects'
+// import Projects from './pages/Projects'
 
 // import FooterCom from './components/FooterCom'
 
@@ -34,7 +34,7 @@ export default function App() {
     <Route path="/blog" element={<Blog/>}/> 
     <Route path="/sign-in" element={<SignIn/>}/>
     <Route path="/sign-up" element={<SignUp/>}/>
-    <Route path="/projects" element={<Projects/>}/>
+    {/* <Route path="/projects" element={<Projects/>}/> */}
     <Route path="/search" element={<Search/>}/>
     <Route element={<PrivateRoute/>}>
     
