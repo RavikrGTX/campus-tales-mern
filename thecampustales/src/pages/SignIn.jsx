@@ -48,7 +48,7 @@ export default function SignIn() {
         {/* left */}
         <div className='flex-1'> <Link
          to="/" className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white text-4xl' >
-        <span className='px-2 py1 bg-gradient-to-r from-green-900 via-green-700 to-green-400 rounded-lg text-white text-4xl'>ThePharmacast</span>Blog
+        <span className='px-2 py1 bg-black text-white text-4xl'>Campus Tales</span>
         </Link>
         <p className='text-sm mt-5'>
           you can signin with your email and password
