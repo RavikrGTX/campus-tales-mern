@@ -29,7 +29,7 @@ Clarity for life.
         </p>
 <Link
   to="/search"
-  className="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 text-black rounded-xl text-lg font-bold transition-colors duration-200 hover:bg-orange-600"
+  className="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 text-black rounded-xl text-lg font-bold transition-colors duration-200 hover:bg-orange-600 w-fit"
 >
   Explore Blogs
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
